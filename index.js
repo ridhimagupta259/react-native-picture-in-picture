@@ -1,5 +1,3 @@
-import { NativeModules } from 'react-native';
+import RNPictureInPicture from './src/config'
 
-const { PictureInPicture } = NativeModules;
-
-export default PictureInPicture;
+export default RNPictureInPicture;
