@@ -106,6 +106,7 @@ public class PictureInPictureModule extends ReactContextBaseJavaModule implement
                 getCurrentActivity().enterPictureInPictureMode(params.build());
             } else
                 getCurrentActivity().enterPictureInPictureMode();
+                isPIPStateEnabled(true);
         }
     }
 
@@ -203,6 +204,13 @@ public class PictureInPictureModule extends ReactContextBaseJavaModule implement
         WritableMap error = Arguments.createMap();
         event.putBoolean("state", play);
         sendEvent("EVENT_ACTIVITY_STATE", event);
+    }
+
+    public void isPIPStateEnabled(boolean enabled) {
+        WritableMap event = Arguments.createMap();
+        WritableMap error = Arguments.createMap();
+        event.putBoolean("state", enabled);
+        sendEvent("EVENT_ENABLE_STATE", event);
     }
 
     private void sendEvent(String eventName, @Nullable WritableMap params) {

@@ -5,6 +5,7 @@ const eventEmitter = new NativeEventEmitter(PictureInPicture);
 
 const eventMap = {
     pipActivityState: 'EVENT_ACTIVITY_STATE',
+    pipEnableState: 'EVENT_ENABLE_STATE'
 };
 
 const _subscriptions = new Map();
